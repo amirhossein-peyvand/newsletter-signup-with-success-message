@@ -1,0 +1,44 @@
+@import "./colors.scss";
+
+.card {
+  align-items: flex-start;
+  background-color: $white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 3rem;
+  row-gap: 2rem;
+  width: 40rem;
+
+  img {
+    width: 4.5rem;
+  }
+
+  .title {
+    color: $dark-slate-grey;
+    font-size: 3rem;
+  }
+
+  .desc {
+    color: $dark-slate-grey;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    background-color: $dark-slate-grey;
+    border-radius: 5px;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  .btn:hover {
+    background: $active-color;
+  }
+}

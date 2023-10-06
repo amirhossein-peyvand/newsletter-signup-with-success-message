@@ -1,0 +1,100 @@
+@import "./colors.scss";
+
+.desktopCard {
+  display: flex;
+  margin: 0 auto;
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 45%;
+  align-items: center;
+
+  .content {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    .title {
+      font-size: 4.5rem;
+      color: $dark-slate-grey;
+    }
+
+    .desc {
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: $dark-slate-grey;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+
+      li {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+        color: $dark-slate-grey;
+        font-size: 1.1rem;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      .formGroup {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        label {
+          font-size: 1.1rem;
+          color: $dark-slate-grey;
+        }
+
+        input {
+          width: 100%;
+          padding: 1rem 1rem 1rem 1.5rem;
+          outline: none;
+          border: 1px solid hsl(229, 14%, 76%);
+          border-radius: 5px;
+        }
+
+        input::placeholder {
+          font-size: 1.1rem;
+          color: $grey;
+        }
+      }
+      .btn {
+        padding: 1.2rem 1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        background-color: $dark-slate-grey;
+        color: $white;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background: $active-color;
+      }
+    }
+  }
+
+  .imageContainer {
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
