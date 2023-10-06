@@ -3,7 +3,7 @@ import "../sass/DesktopSuccess.scss";
 
 const DesktopSuccess = () => {
   return (
-    <article className="card">
+    <article className="desktopSuccessCard">
       <img src={successIcon} alt="successIcon" />
       <h1 className="title">Thanks for subscribing!</h1>
       <p className="desc">

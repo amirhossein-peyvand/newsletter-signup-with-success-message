@@ -1,0 +1,46 @@
+@import "../sass/colors.scss";
+
+.mobileSuccessCard {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 17rem 2rem 5rem;
+
+  section {
+    align-items: flex-start;
+    color: $dark-slate-grey;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+
+    img {
+      width: 6rem;
+    }
+
+    .title {
+      font-size: 3rem;
+    }
+
+    .desc {
+      font-size: 1.5rem;
+      letter-spacing: 0.4px;
+      line-height: 1.4;
+    }
+  }
+
+  .btn {
+    background-color: $dark-slate-grey;
+    border-radius: 5px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+  }
+
+  .btn:hover {
+    background: $active-color;
+  }
+}

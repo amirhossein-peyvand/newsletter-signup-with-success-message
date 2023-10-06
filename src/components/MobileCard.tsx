@@ -4,7 +4,7 @@ import "../sass/MobileCard.scss";
 
 const MobileCard = () => {
   return (
-    <article className="card">
+    <article className="mobileCard">
       <section className="imageContainer">
         <img src={illustrationMobile} alt="illustrationMobile" />
       </section>
