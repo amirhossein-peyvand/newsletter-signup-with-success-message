@@ -1,9 +1,9 @@
-import MobileSuccess from "./components/MobileSuccess";
+import MobileCard from "./components/MobileCard";
 
 function App() {
   return (
     <>
-      <MobileSuccess />
+      <MobileCard />
     </>
   );
 }

@@ -60,6 +60,12 @@
         flex-direction: column;
         row-gap: 0.5rem;
 
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+        }
+
         label {
           font-size: 1.1rem;
           color: $dark-slate-grey;

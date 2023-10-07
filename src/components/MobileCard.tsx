@@ -1,8 +1,28 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FieldValues, useForm } from "react-hook-form";
+import { z } from "zod";
 import iconList from "../assets/icon-list.svg";
 import illustrationMobile from "../assets/illustration-sign-up-mobile.svg";
+import message from "../errorMessage";
 import "../sass/MobileCard.scss";
 
+const schema = z.object({
+  email: z
+    .string()
+    .email({ message })
+    .min(14, { message })
+    .max(45, { message }),
+});
+type FormData = z.infer<typeof schema>;
+
 const MobileCard = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const onSubmit = (data: FieldValues) => console.log(data);
+
   return (
     <article className="mobileCard">
       <section className="imageContainer">
@@ -27,10 +47,21 @@ const MobileCard = () => {
             <span>And much more!</span>
           </li>
         </ul>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formGroup">
-            <label htmlFor="email">Email address</label>
-            <input type="email" placeholder="email@company.com" />
+            <div>
+              <label htmlFor="email">Email address</label>
+              {errors.email && (
+                <p style={{ color: "hsl(4, 100%, 67%)" }}>
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+            <input
+              {...register("email")}
+              type="email"
+              placeholder="email@company.com"
+            />
           </div>
           <button type="submit">Subscribe to monthly newsletter</button>
         </form>
