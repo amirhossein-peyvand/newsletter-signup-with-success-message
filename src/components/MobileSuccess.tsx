@@ -1,8 +1,11 @@
+import { useMediaQuery } from "react-responsive";
 import successIcon from "../assets/icon-success.svg";
 import "../sass/MobileSuccess.scss";
+import DesktopSuccess from "./DesktopSuccess";
 
 const MobileSuccess = () => {
-  return (
+  const isBiggerThan700px = useMediaQuery({ query: "(min-width:700px)" });
+  const mobileSuccess = (
     <article className="mobileSuccessCard">
       <section>
         <img src={successIcon} alt="successIcon" />
@@ -16,6 +19,8 @@ const MobileSuccess = () => {
       <button className="btn">Dismiss message</button>
     </article>
   );
+
+  return <>{isBiggerThan700px ? <DesktopSuccess /> : mobileSuccess}</>;
 };
 
 export default MobileSuccess;

@@ -5,6 +5,7 @@ import iconList from "../assets/icon-list.svg";
 import illustrationMobile from "../assets/illustration-sign-up-mobile.svg";
 import message from "../errorMessage";
 import "../sass/MobileCard.scss";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
   email: z
@@ -19,7 +20,7 @@ const MobileCard = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const onSubmit = (data: FieldValues) => console.log(data);
 
@@ -63,7 +64,18 @@ const MobileCard = () => {
               placeholder="email@company.com"
             />
           </div>
-          <button type="submit">Subscribe to monthly newsletter</button>
+          <button type="submit">
+            {isValid ? (
+              <Link
+                to={"/mobilesuccess"}
+                style={{ color: "hsl(0, 0%, 100%)", textDecoration: "none" }}
+              >
+                Subscribe to monthly newsletter
+              </Link>
+            ) : (
+              "Subscribe to monthly newsletter"
+            )}
+          </button>
         </form>
       </section>
     </article>

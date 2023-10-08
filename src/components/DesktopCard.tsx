@@ -5,6 +5,7 @@ import iconList from "../assets/icon-list.svg";
 import illustrationDesktop from "../assets/illustration-sign-up-desktop.svg";
 import message from "../errorMessage";
 import "../sass/DesktopCard.scss";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
   email: z
@@ -19,9 +20,12 @@ const DesktopCard = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    console.log(isValid);
+  };
 
   return (
     <article className="desktopCard">
@@ -62,7 +66,16 @@ const DesktopCard = () => {
             />
           </div>
           <button type="submit" className="btn">
-            Subscribe to monthly newsletter
+            {isValid ? (
+              <Link
+                to={"/desktopsuccess"}
+                style={{ color: "hsl(0, 0%, 100%)", textDecoration: "none" }}
+              >
+                Subscribe to monthly newsletter
+              </Link>
+            ) : (
+              "Subscribe to monthly newsletter"
+            )}
           </button>
         </form>
       </section>
