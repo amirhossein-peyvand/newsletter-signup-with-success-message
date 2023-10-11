@@ -71,7 +71,7 @@ const Card = () => {
           <button type="submit" className="btn">
             {isValid ? (
               <Link
-                to={"/desktopsuccess"}
+                to={"/success"}
                 style={{ color: "hsl(0, 0%, 100%)", textDecoration: "none" }}
               >
                 Subscribe to monthly newsletter
@@ -131,7 +131,7 @@ const Card = () => {
           <button type="submit">
             {isValid ? (
               <Link
-                to={"/mobilesuccess"}
+                to={"/success"}
                 style={{ color: "hsl(0, 0%, 100%)", textDecoration: "none" }}
               >
                 Subscribe to monthly newsletter

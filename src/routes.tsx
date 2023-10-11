@@ -1,8 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
-import DesktopSuccess from "./components/DesktopSuccess";
-import MobileSuccess from "./components/MobileSuccess";
+import Success from "./components/Success";
 
 const router = createBrowserRouter([
   {
@@ -10,8 +9,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "/desktopsuccess", element: <DesktopSuccess /> },
-      { path: "/mobilesuccess", element: <MobileSuccess /> },
+      { path: "/success", element: <Success /> },
     ],
   },
 ]);
