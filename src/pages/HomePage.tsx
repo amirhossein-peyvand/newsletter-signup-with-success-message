@@ -1,10 +1,11 @@
-import { useMediaQuery } from "react-responsive";
-import DesktopCard from "../components/DesktopCard";
-import MobileCard from "../components/MobileCard";
+import Card from "../components/Card";
 
 const HomePage = () => {
-  const isBiggerThan700px = useMediaQuery({ query: "(min-width:700px)" });
-  return <>{isBiggerThan700px ? <DesktopCard /> : <MobileCard />}</>;
+  return (
+    <>
+      <Card />
+    </>
+  );
 };
 
 export default HomePage;
